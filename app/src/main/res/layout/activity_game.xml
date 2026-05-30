@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Área do jogo -->
+    <SurfaceView
+        android:id="@+id/gameSurface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!-- D-Pad -->
+    <LinearLayout
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnUp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:text="▲"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnLeft"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="◀"/>
+
+            <Space
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+            <Button
+                android:id="@+id/btnRight"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="▶"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnDown"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:text="▼"/>
+    </LinearLayout>
+
+    <!-- Botões A/B -->
+    <Button
+        android:id="@+id/btnA"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="60dp"
+        android:text="A"/>
+
+    <Button
+        android:id="@+id/btnB"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="20dp"
+        android:text="B"/>
+
+    <!-- Start e Select -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center">
+
+        <Button
+            android:id="@+id/btnSelect"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="SELECT"/>
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="START"/>
+    </LinearLayout>
+
+</FrameLayout>
