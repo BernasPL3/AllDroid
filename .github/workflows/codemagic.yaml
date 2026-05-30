@@ -1,0 +1,37 @@
+workflows:
+  kotlin-android-workflow:
+
+  name: Kotlin Android Build
+  max_build_duration: 60
+  instance_type: mac_mini_m1
+    
+    # Ambiente de execução
+    environment:
+      android:
+        # Versão do Java (use 17 para projetos modernos em Kotlin)
+        java: 17
+      vars:
+        PACKAGE_NAME: "com.seu.projeto"
+    
+    # Scripts executados na ordem
+    scripts:
+      - name: Definir permissões do Gradle
+        script: |
+          chmod +x gradlew
+          
+      - name: Executar testes unitários
+        script: |
+          ./gradlew test
+          
+      - name: Compilar APK (Debug)
+        script: |
+          ./gradlew assembleDebug
+          
+      - name: Compilar App Bundle (Release)
+        script: |
+          ./gradlew bundleRelease
+
+    # Diretórios e arquivos gerados para download na interface do Codemagic
+    artifacts:
+      - app/build/outputs/apk/debug/*.apk
+      - app/build/outputs/bundle/release/*.aab
